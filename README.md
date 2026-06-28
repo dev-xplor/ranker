@@ -107,7 +107,7 @@ redrob-ranker/
 ├── candidate_schema.json
 ├── rank.py
 ├── validate_submission.py
-├── team_ottol.csv
+├── final-valid.csv
 ├── submission_metadata.yaml
 └── README.md
 ```
@@ -123,7 +123,7 @@ redrob-ranker/
 ├── rank.py
 ├── validate_submission.py
 ├── submission_metadata.yaml
-├── team_ottol.csv
+├── final-valid.csv
 └── README.md
 ```
 
@@ -170,13 +170,13 @@ Put the official `candidates.jsonl` file in the project root.
 ### 5) Run the ranker
 
 ```bash
-python rank.py --candidates ./candidates.jsonl --out ./team_ottol.csv
+python rank.py --candidates ./candidates.jsonl --out ./final-valid.csv
 ```
 
 ### 6) Validate the submission
 
 ```bash
-python validate_submission.py ./team_ottol.csv
+python validate_submission.py ./final-valid.csv
 ```
 
 A successful run should print:
@@ -265,14 +265,14 @@ __pycache__/
 *.pyc
 candidates.jsonl
 submission.csv
-team_ottol.csv
+final-valid.csv
 ```
 
 ## Submission assets
 
 Typical submission bundle:
 - `rank.py`
-- `team_ottol.csv`
+- `final-valid.csv`
 - `validate_submission.py`
 - `submission_metadata.yaml`
 - `README.md`
