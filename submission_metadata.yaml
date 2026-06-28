@@ -1,0 +1,96 @@
+team_name: "ranker"
+
+primary_contact:
+  name: "Sanket P"
+  email: "a*b*r*s*@icloud.com"
+  phone: "+91-XXXXXXXXXX"
+
+team_members:
+  - name: "Sanket P"
+    email: "a*b*r*s*@icloud.com"
+    role: "Developer"
+
+project:
+  title: "ranker"
+  category: "AI Candidate Ranking"
+  problem_statement: >
+    Build an AI system that ranks candidates the way a strong recruiter would,
+    by understanding role fit beyond keyword matching and generating a reliable shortlist.
+  short_description: >
+    Offline AI candidate ranking pipeline for recruiter-style shortlist generation
+    using role understanding, profile evidence, and hybrid scoring instead of keyword matching.
+
+repository:
+  name: "ranker"
+  url: "https://github.com/dev-xplor/ranker.git"
+
+submission:
+  output_file: "final-valid.csv"
+  reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./final-valid.csv"
+  validator_command: "python validate_submission.py ./final-valid.csv"
+
+compute:
+  platform: "Local machine"
+  os: "Windows/macOS/Linux"
+  python_version: "3.10+"
+  cpu_only: true
+  network_required_during_ranking: false
+  gpu_required: false
+
+tech_stack:
+  - "Python"
+  - "Pandas"
+  - "NumPy"
+  - "JSONL parsing"
+  - "Heuristic ranking"
+  - "Offline scoring pipeline"
+
+solution_summary:
+  approach: >
+    This project uses a hybrid offline ranking approach that evaluates candidates
+    using title alignment, skill relevance, production evidence, evaluation signals,
+    product-company background, behavioral indicators, and penalty rules for weak-fit profiles.
+  why_it_works: >
+    Instead of relying only on keyword overlap, the system scores practical evidence
+    of role fit and produces a shortlist that is more aligned with recruiter judgment.
+  explainability: >
+    Each shortlisted candidate includes a reasoning field summarizing the strongest
+    supporting signals behind the ranking.
+
+methodology:
+  jd_understanding: >
+    The ranking logic prioritizes AI/ML engineering relevance, retrieval and ranking experience,
+    embeddings/vector search familiarity, Python strength, evaluation metrics, and production readiness.
+  scoring_dimensions:
+    - "Skill match"
+    - "Title alignment"
+    - "Years-of-experience fit"
+    - "Location and relocation fit"
+    - "Behavioral and hireability signals"
+    - "Product-company exposure"
+    - "Evaluation and relevance evidence"
+    - "Production and shipping evidence"
+  penalties:
+    - "Services-only background with weak product exposure"
+    - "Research-heavy profile without production evidence"
+    - "Framework-heavy but IR-light profile"
+    - "Adjacent AI domain without retrieval/NLP depth"
+    - "Job-hopping pattern"
+
+artifacts:
+  included_files:
+    - "rank.py"
+    - "README.md"
+    - "validate_submission.py"
+    - "final-valid.csv"
+    - "submission_metadata.yaml"
+
+declarations:
+  single_member_project: true
+  code_runs_locally: true
+  no_external_api_calls_during_ranking: true
+  submission_ready: true
+
+notes: >
+  This is a single-member submission. The repository is designed for local execution
+  and produces a valid ranked shortlist CSV in the required format.
